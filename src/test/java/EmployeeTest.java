@@ -97,4 +97,12 @@ public class EmployeeTest {
         TheList.addEmployee(e4);
         assertEquals(1,TheList.getListSize());
     }
+
+    @Test
+    void cannotFind(){
+        TheList = new EmployeeList();
+        Employee e4 = new Employee("Conor", "12345");
+        Exception e = assertThrows(IllegalArgumentException.class,()-> TheList.removeEmployee(e4));
+        assertEquals("Employee can not be found ",e.getMessage());
+    }
 }

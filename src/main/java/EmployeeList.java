@@ -46,7 +46,14 @@ public class EmployeeList {
 
     public  boolean findEmployee (Employee employee){
         boolean result = TheList.contains(employee);
-        return result;
+        if (result ==  true)
+        {
+            return result;
+        }
+        else {
+            throw new IllegalArgumentException("Employee can not be found ");
+        }
+
     }
 
     public int getListSize(){
